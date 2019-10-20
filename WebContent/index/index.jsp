@@ -6,11 +6,6 @@
 <head>
 <title>论坛首页</title>
 <link rel="stylesheet" href="fonts/iconfont.css">
-<!-- 
-<link href="css/style_1_common.css" rel="stylesheet" type="text/css">
-<link href="css/style_1_forum_index.css" rel="stylesheet" type="text/css">
-<link href="css/style_1_forum_forumdisplay.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="css/reset.css">-->
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/jquery-3.3.1.min.js"></script>

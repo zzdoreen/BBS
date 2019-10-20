@@ -38,8 +38,6 @@
 </style>
 </head>
 <body>
-
-<div>
 <jsp:include page="header.jsp" />
 
 <div class="container" style="margin-top:150px">

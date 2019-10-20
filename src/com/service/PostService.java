@@ -13,6 +13,7 @@ import com.dao.ReplyDao;
 import com.dao.UserDao;
 import com.entity.Post;
 import com.entity.Reply;
+import com.entity.Users;
 import com.util.DateUtil;
 
 @Service	// 注解为service层spring管理bean
@@ -59,6 +60,11 @@ public class PostService {
 		return postDao.selectCountByTopicid(topicid);
 	}
 	
+	
+	public List<Post> getList() {
+		return postDao.selectList();
+	}
+	
 	/**
 	 * 获取列表
 	 * @param page
@@ -91,7 +97,7 @@ public class PostService {
 		postDao.updateViewCount(id); // 记录查看次数
 		return packPost(postDao.select(Post.class, id));
 	}
-
+	
 	/**
 	 * 添加
 	 * @param post
@@ -118,7 +124,6 @@ public class PostService {
 	public boolean delete(Post post) {
 		return postDao.delete(post);
 	}
-	
 	
 	/**
 	 * 封装信息

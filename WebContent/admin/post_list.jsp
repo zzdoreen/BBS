@@ -16,6 +16,12 @@
 	vertical-align: middle;
 	text-align:center;
 	border-top: 1px dashed #ddd;
+	text-overflow: ellipsis;
+	width:10%
+}
+.text{
+	width:100%;
+	background:red;
 }
 </style>
 </head>
@@ -32,10 +38,7 @@
 	        	<a href="postList.action?moduleid=${module.id}">${module.name}</a>
 	        </li>
 		</c:forEach>
-    </ul>
-	
-	
-	
+    </ul>	
 	<c:if test="${moduleid>0}">
 		<ul role="tablist" class="nav nav-tabs">
 	        <li role="presentation" <c:if test="${topicid==0}">class='active'</c:if>>
@@ -48,19 +51,17 @@
 			</c:forEach>
 	    </ul>
     </c:if>
-	
-	
 
-	<table class="table table-hover table-condensed">
+	<table class='table table-striped table-hover'>
 
-	<tr class='table-head'>
-		<th width="20%">标题</th>
-		<th width="10%">所属话题</th>
-		<th width="10%">创建用户</th>
-		<th width="10%">创建时间</th>
-		<th width="8%">查看数量</th>
-		<th width="8%">回复数量</th>
-		<th width="20%">操作</th>
+	<tr>
+		<th >标题</th>
+		<th>所属话题</th>
+		<th >创建用户</th>
+		<th >创建时间</th>
+		<th>查看数量</th>
+		<th >回复数量</th>
+		<th >操作</th>
 	</tr>
 	
 	<c:forEach var="post" items="${postList}">
@@ -77,7 +78,6 @@
 			</td>
        	</tr>
      </c:forEach>
-     
 </table>
 
 <br>${pageHtml}<br>

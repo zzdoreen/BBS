@@ -99,5 +99,4 @@ public class Post {
 	public void setLastReply(Reply lastReply) {
 		this.lastReply = lastReply;
 	}
-	
 }

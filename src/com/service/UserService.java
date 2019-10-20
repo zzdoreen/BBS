@@ -1,5 +1,6 @@
 package com.service;
 
+import java.io.File;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dao.UserDao;
 import com.entity.Users;
+import com.util.Base64Utils;
+
 import com.util.SafeUtil;
 
 @Service	// 注解为service层spring管理bean
@@ -95,15 +98,19 @@ public class UserService {
 		Users old = this.get(user.getId());
 		old.setUsername(user.getUsername());
 		old.setNickname(user.getNickname());
+		old.setAvatar(user.getAvatar());
 		old.setScore(user.getScore());
 		if (!user.getPassword().trim().isEmpty()) {
 			old.setPassword(SafeUtil.encode(user.getPassword()));
 		}
+		//String a = Base64Utils.ImageToBase64("C:/Users/zengzhi/Desktop/img/admin-login.jpeg");
+		//System.out.println(a);
+		//System.out.println(Base64Utils.Base64ToImage(a));
 		return userDao.update(old);
 	}
 	
 	/**
-	 * 删除
+	 * 删除 
 	 * @param user
 	 */
 	public boolean delete(Users user) {

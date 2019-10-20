@@ -102,6 +102,7 @@
 	<div class="container">
 		<form action="register.action" method="POST" class="left input-group">
 			<h1>Welcome!</h1>
+			<input type="text" placeholder="Username" name="user.avatar" required value="http://img0.imgtn.bdimg.com/it/u=401447366,3975072878&fm=26&gp=0.jpg" style='display:none'>
 			<input type="text" placeholder="Username" name="user.username" required>
 			<input type="password" placeholder="password" name="user.password" required>
 			<input type="password" placeholder="check password" name="user.passwordNew" required>

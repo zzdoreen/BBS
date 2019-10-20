@@ -5,7 +5,7 @@
 <head>
 <title>用户列表</title>
 <meta charset="utf-8"/>
-<link rel="stylesheet" href="css/bootstrap.css"/> 
+<link rel="stylesheet" href="css/bootstrap.min.css"/> 
 </head>
 <body>
 	<%@include file="header.jsp" %>

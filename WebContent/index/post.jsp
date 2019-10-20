@@ -124,7 +124,7 @@
 					<div class="col-xs-2 avatar">
 						<a target="_blank">
 							<!-- <img  src="http://uc.discuz.net/images/noavatar_middle.gif"> -->
-							<img src='img/head.jpeg'>
+							<img src='${post.user.avatar}'>
 						</a>
 						<span class="label label-danger">楼主</span>
 						<p class="name">
@@ -164,7 +164,7 @@
 					<div class="container">
 						<div class="author row">
 							<div class="col-xs-2 avatar">
-								<a target="_blank"><img src="img/head.jpeg"></a>
+								<a target="_blank"><img src='${reply.user.avatar}'></a>
 								<p class="name">
 									<a href="home.php?mod=space&amp;uid=3077707"
 										target="_blank">${reply.user.nickname}</a>

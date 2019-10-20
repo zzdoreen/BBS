@@ -5,11 +5,15 @@ import java.util.Objects;
 
 import org.springframework.stereotype.Repository;
 
+import com.entity.Module;
 import com.entity.Post;
 
 @Repository // 注册dao层bean等同于@Component
 public class PostDao extends BaseDao{
 
+	public List<Post> selectList() {
+		return getSession().createQuery("from Post order by id desc", Post.class).list();
+	}
 	
 	/**
 	 * 获取列表
@@ -67,6 +71,16 @@ public class PostDao extends BaseDao{
 	public long selectCountByModuleid(int moduleid){
 		return getSession().createQuery("select count(*) from Post where topic.id in (select id from Topic where module_id=:moduleid)", Long.class)
 				.setParameter("moduleid", moduleid).uniqueResult();
+	}
+	
+	/**
+	 * 新增 
+	 * 通过userid获取数据
+	 * @return
+	 */
+	public long selectCountByUserid(int userid){
+		return getSession().createQuery("select count(*) from Post where user_id=:userid)", Long.class)
+				.setParameter("userid", userid).uniqueResult();
 	}
 
 	/**

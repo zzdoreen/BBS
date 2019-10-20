@@ -26,7 +26,7 @@ ul {
 	justify-content: space-between
 }
 
-ul>li:hover, a:hover {
+.navbar ul>li:hover,.navbar a:hover {
 	color: white;
 	margin-top: 1px;
 	cursor: pointer;
@@ -60,8 +60,12 @@ ul>li:hover, a:hover {
 	height: 40px;
 	border-radius: 50%;
 }
-a {
+.navbar a {
 	color: #222
+}
+a:hover{
+	cursor: pointer;
+	text-decoration: none;
 }
 </style>
 
@@ -95,9 +99,10 @@ a {
 						<div class="col-md-4"></div>
 						<div class="col-md-8">
 							<ul>
-								<li>${sessionScope.user.nickname} <img class="head-avatar"
-									src="img/avatar.jpg" alt="avatar"
-									title="积分：${sessionScope.user.score}">
+								<li>${sessionScope.user.nickname} 
+								<a href='user.action'><img class="head-avatar"
+									src="${sessionScope.user.avatar}" alt="avatar"
+									title="积分：${sessionScope.user.score}"></a>
 								</li>
 								<li><a href="logout.action">退出</a></li>
 							</ul>

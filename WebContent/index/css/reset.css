@@ -38,7 +38,8 @@ progress {
 
 a {
     color:black;
-    text-decoration: none;    
+    text-decoration: none; 
+    cursor: pointer;   
 }
 
 a:active {

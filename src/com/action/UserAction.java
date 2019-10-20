@@ -18,7 +18,7 @@ import com.util.PageUtil;
 	@Result(name="userAdd", location="/admin/user_add.jsp"),
 	@Result(name="userEdit", location="/admin/user_edit.jsp"),
 	@Result(name="reuserList", type="redirect", location="userList.action"),
-})	
+})
 @SuppressWarnings("serial") // 为了消除serialVersionUID警告, 无业务意义
 public class UserAction extends BaseAction{
 	

@@ -28,6 +28,8 @@ import com.service.UserService;
 	@Result(name="topic", location="/index/topic.jsp"),
 	@Result(name="post", location="/index/post.jsp"),
 	@Result(name="msg", location="/index/msg.jsp"),
+	@Result(name="user", location="/index/user.jsp"),
+	@Result(name="edit", location="/index/userEdit.jsp"),
 	@Result(name="remsg", type="redirect", location="msg.action", params={"msg", "${msg}", "reurl", "${reurl}"}),
 })	
 @SuppressWarnings("serial")
@@ -57,8 +59,6 @@ public class IndexAction extends BaseAction{
 	private PostService postService;
 	@Autowired
 	private ReplyService replyService;
-	
-	
 	
 	/**
 	 * 首页
@@ -232,6 +232,36 @@ public class IndexAction extends BaseAction{
 		return "remsg";
 	}
 	
+	//个人中心
+	@Action("user")
+	public String user(){
+		moduleList = moduleService.getList(); // 全部模块
+		postList = postService.getList();
+		return "user";
+	}
+	
+	/**
+	 * 编辑
+	 * @return
+	 */
+	@Action("edit")
+	public String edit(){
+		user = userService.get(user.getId());
+		return "edit";
+	}
+	
+	/**
+	 * 更新
+	 * @return
+	 * 成功后重定向到列表页
+	 */
+	@Action("update")
+	public String update(){
+		userService.update(user);
+		msg = "修改成功! 即将转入登陆页面";
+		reurl = "login.jsp";
+		return "remsg";
+	}
 	
 	
 	public Users getUser() {
@@ -298,6 +328,14 @@ public class IndexAction extends BaseAction{
 		this.postList = postList;
 	}
 
+	public List<Post> getList() {
+		return postList;
+	}
+
+	public void setList(List<Post> postList) {
+		this.postList = postList;
+	}
+	
 	public Post getPost() {
 		return post;
 	}
