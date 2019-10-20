@@ -63,6 +63,14 @@
 		margin-top:15px;
 		color: #777
 	}
+	.name {
+		width:100%;
+		overflow:hidden;
+		display:inline-block;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		cursor:default;
+	}
 </style>
 <body>
 	<div id="wrap">
@@ -95,7 +103,7 @@
 											<div class="row">
 												<div class="col-xs-4">
 													<div class="col-xs-4">
-														<span>${topic.lastPost.user.nickname}</span>
+														<span class='name'>${topic.lastPost.user.nickname}</span>
 													</div>
 													<div class="col-xs-4">
 														<span class="iconfont">&#xe7ac;</span>&nbsp;&nbsp;${topic.replyCount}

@@ -126,7 +126,7 @@ body{
 
 	<script>
 	setTimeout(()=>{
-		window.open('userList.action','_self')
+		window.open('moduleList.action','_self')
 	},5000)
 	</script>
 </body>

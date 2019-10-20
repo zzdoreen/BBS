@@ -2,6 +2,7 @@ package com.action;
 
 import java.util.List;
 
+import org.apache.catalina.User;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
@@ -30,6 +31,7 @@ import com.service.UserService;
 	@Result(name="msg", location="/index/msg.jsp"),
 	@Result(name="user", location="/index/user.jsp"),
 	@Result(name="edit", location="/index/userEdit.jsp"),
+	@Result(name="home", location="/index/home.jsp"),
 	@Result(name="remsg", type="redirect", location="msg.action", params={"msg", "${msg}", "reurl", "${reurl}"}),
 })	
 @SuppressWarnings("serial")
@@ -44,6 +46,7 @@ public class IndexAction extends BaseAction{
 	private Topic topic;
 	private Post post;
 	private Reply reply;
+	private List<Users> userList;
 	private List<Topic> topicList;
 	private List<Module> moduleList;
 	private List<Post> postList;
@@ -246,6 +249,7 @@ public class IndexAction extends BaseAction{
 	 */
 	@Action("edit")
 	public String edit(){
+		moduleList = moduleService.getList();
 		user = userService.get(user.getId());
 		return "edit";
 	}
@@ -263,7 +267,17 @@ public class IndexAction extends BaseAction{
 		return "remsg";
 	}
 	
-	
+	/**
+	 * 用户主页
+	 * @return
+	 * */
+	@Action("home")
+	public String home(){
+		moduleList = moduleService.getList();
+		user = userService.get(user.getId());
+		postList = postService.getList();
+		return "home";
+	}
 	public Users getUser() {
 		return user;
 	}

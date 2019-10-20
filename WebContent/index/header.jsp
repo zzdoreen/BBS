@@ -53,12 +53,24 @@ ul {
 	margin-right: 15px;
 	vertical-align: center
 }
-
+.userinfo{
+	width:85%;
+	white-space: nowrap;
+}
 .head-avatar {
 	line-height: 42px;
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
+	vertical-align: top;
+}
+.userinfo .name{
+	width:calc(70% - 40px);
+	overflow:hidden;
+	display:inline-block;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	text-align:right;
 }
 .navbar a {
 	color: #222
@@ -99,8 +111,10 @@ a:hover{
 						<div class="col-md-4"></div>
 						<div class="col-md-8">
 							<ul>
-								<li>${sessionScope.user.nickname} 
-								<a href='user.action'><img class="head-avatar"
+								<li class='userinfo'>
+								<span class='name' title='${sessionScope.user.nickname}'>${sessionScope.user.nickname}</span> 
+								<a href='user.action?id=${sessionScope.user.id}'>
+								<img class="head-avatar"
 									src="${sessionScope.user.avatar}" alt="avatar"
 									title="积分：${sessionScope.user.score}"></a>
 								</li>

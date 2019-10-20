@@ -35,6 +35,20 @@
 		background:#7394ba;
 		color: white;
 	}
+	.common .s{
+		width:650px;
+		overflow:hidden;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		display:inline-block;
+	}
+	.post-avatar{
+		width:64px;
+		height:64px;
+		border-radius:50%;
+		border:1px solid #ccc;
+		box-shadow:0 0 2px 2px #7394ba;
+	}
 </style>
 </head>
 <body>
@@ -62,7 +76,7 @@
 						<tr>
 							<td>
 								<a href="post.action?post.id=${post.id}" title="新窗口打开" target="_blank">
-									<div style='width:64px;height:64px;background:black'></div>
+									<img src='${ post.user.avatar }' class='post-avatar'/>
 								</a>
 							</td>
 							<th class="common">

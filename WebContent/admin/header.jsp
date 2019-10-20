@@ -61,26 +61,34 @@
         <a href="#" class="list-group-item avatar">
             <img src="images/avatar.jpg" class="avatar" alt="">
         </a>
-        <a href="userList.action" class="list-group-item"
-        <%if(request.getRequestURI().contains("user_")){out.print("class='list-group-item active'");}%> role="presentation"
-        >
-        	<i class='glyphicon glyphicon-user'></i>
-        	用户管理</a>
+        <c:if test="${admin.role!=2}">
         <a href="moduleList.action" class="list-group-item"
         <%if(request.getRequestURI().contains("module_")){out.print("class='list-group-item active'");}%> role="presentation"
         >
         	<i class='glyphicon glyphicon-file'></i>
         	板块管理</a>
+        </c:if>
+        <c:if test="${admin.role!=2}">
         <a href="topicList.action" class="list-group-item"
         <%if(request.getRequestURI().contains("topic_")){out.print("class='list-group-item active'");}%> role="presentation"
         >
         	<i class='glyphicon glyphicon-th-large'></i>
         	话题管理</a>
+        </c:if>
+        <c:if test="${admin.role!=3}">
         <a href="postList.action" class="list-group-item"
         <%if(request.getRequestURI().contains("post_")){out.print("class='list-group-item active'");}%> role="presentation"
         >
         	<i class='glyphicon glyphicon-tag'></i>
         	帖子管理</a>
+        </c:if>
+        <c:if test="${admin.role!=3}">
+        <a href="userList.action" class="list-group-item"
+        <%if(request.getRequestURI().contains("user_")){out.print("class='list-group-item active'");}%> role="presentation"
+        >
+        	<i class='glyphicon glyphicon-user'></i>
+        	用户管理</a>
+        </c:if>
         <a href="adminEdit.action" class="list-group-item"
         <%if(request.getRequestURI().contains("admin_")){out.print("class='list-group-item active'");}%> role="presentation"
         >

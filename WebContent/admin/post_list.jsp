@@ -6,23 +6,37 @@
 <title>帖子列表</title>
 <meta charset="utf-8"/>
 <style>
-.outer .table-head th{
-	background: #eee;
-	text-align:center;
-	vertical-align:middle;
-}
+.post-list .post-head {
+			height: 37px;
+			line-height: 37px;
+		}
 
-.outer .table>tbody>tr>td{
-	vertical-align: middle;
-	text-align:center;
-	border-top: 1px dashed #ddd;
-	text-overflow: ellipsis;
-	width:10%
-}
-.text{
-	width:100%;
-	background:red;
-}
+		.row {
+			border: 1px solid #ddd;
+			height: 50px;
+			text-align: center;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+		.row:hover{
+			background:#eee;
+			cursor:default;
+		}
+		.row div {
+			padding-top: 7px;
+			height: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			border-right: 1px solid #ddd;
+		}
+
+		.post-head div {
+			padding-top: 0;
+			text-align: center;
+			border: 1px solid #ddd;
+			font-weight: 700;
+		}
 </style>
 </head>
 <body>
@@ -52,34 +66,36 @@
 	    </ul>
     </c:if>
 
-	<table class='table table-striped table-hover'>
-
-	<tr>
-		<th >标题</th>
-		<th>所属话题</th>
-		<th >创建用户</th>
-		<th >创建时间</th>
-		<th>查看数量</th>
-		<th >回复数量</th>
-		<th >操作</th>
-	</tr>
-	
-	<c:forEach var="post" items="${postList}">
-         <tr>
-         	<td><p>${post.title}</p></td>
-         	<td><p>【${post.topic.module.name}】<br>${post.topic.name}</p></td>
-         	<td><p>${post.user.username}</p></td>
-         	<td><p>${post.systime}</p></td>
-         	<td><p>${post.viewCount}</p></td>
-         	<td><p>${post.replyCount}</p></td>
-			<td>
-				<a class="btn btn-link" href="replyList.action?post.id=${post.id}&moduleid=${moduleid}&topicid=${topicid}">查看评论</a>
-				<a class="btn btn-danger" href="postDelete.action?post.id=${post.id}&moduleid=${moduleid}&topicid=${topicid}">删除</a>
-			</td>
-       	</tr>
-     </c:forEach>
-</table>
-
+	<div class="post-list">
+				<div class="row post-head">
+					<div class="col-xs-2">标题</div>
+					<div class="col-xs-2">所属话题</div>
+					<div class="col-xs-1">贴主</div>
+					<div class="col-xs-2">时间</div>
+					<div class="col-xs-1">查看数</div>
+					<div class="col-xs-1">回复数</div>
+					<div class="col-xs-3">操作</div>
+				</div>
+				<c:forEach var="post" items="${postList}">
+					<div class="row">
+						<div class="col-xs-2" title='${post.title}'>
+							${post.title}
+						</div>
+						<div class="col-xs-2">【${post.topic.module.name}】<br />${post.topic.name}</div>
+						<div class="col-xs-1" title="${post.user.username}">${post.user.username}</div>
+						<div class="col-xs-2" title="${post.systime}">${post.systime}</div>
+						<div class="col-xs-1" title="${post.viewCount}">${post.viewCount}</div>
+						<div class="col-xs-1" title="${post.replyCount}">${post.replyCount}</div>
+						<div class="col-xs-3">
+							<a class="btn btn-primary"
+								href="replyList.action?post.id=${post.id}&moduleid=${moduleid}&topicid=${topicid}">查看评论</a>
+							<a class="btn btn-danger"
+								href="postDelete.action?post.id=${post.id}&moduleid=${moduleid}&topicid=${topicid}">删除</a>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+		
 <br>${pageHtml}<br>
 </div>
 </div>

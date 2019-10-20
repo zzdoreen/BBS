@@ -122,13 +122,12 @@
 			<div class="container">
 				<div class="author row">
 					<div class="col-xs-2 avatar">
-						<a target="_blank">
-							<!-- <img  src="http://uc.discuz.net/images/noavatar_middle.gif"> -->
+						<a target="_blank" href='home.action?user.id=${post.user.id}'>
 							<img src='${post.user.avatar}'>
 						</a>
-						<span class="label label-danger">楼主</span>
-						<p class="name">
-							<a href="home.php?mod=space&amp;uid=3077707" target="_blank">${post.user.nickname}</a>
+						<div class="label label-danger">楼主</div>
+						<p class="nickname">
+							<a href="home.action?user.id=${post.user.id}" target="_blank" title='${post.user.nickname}'>${post.user.nickname}</a>
 						</p>
 						<p>积分: ${post.user.score}</p>
 					</div>
@@ -164,9 +163,9 @@
 					<div class="container">
 						<div class="author row">
 							<div class="col-xs-2 avatar">
-								<a target="_blank"><img src='${reply.user.avatar}'></a>
+								<a target="_blank" href='home.action?user.id=${reply.user.id}'><img src='${reply.user.avatar}'></a>
 								<p class="name">
-									<a href="home.php?mod=space&amp;uid=3077707"
+									<a title='${reply.user.nickname}'
 										target="_blank">${reply.user.nickname}</a>
 								</p>
 								<p>积分: ${reply.user.score}</p>

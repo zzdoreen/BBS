@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>个人中心</title>
+<title>用户主页</title>
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src='js/jquery-3.3.1.min.js'></script>
@@ -17,27 +17,12 @@
         }
 
         .container.box {
-            margin-top: 200px;
+            margin-top: 180px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
         }
-
-        .container .user-avatar {
-            margin-top: -180px;
-            width: 100%;
-        }
-
-        .user-avatar img {
-            border-radius: 50%;
-            border: 5px solid #ccc;
-            width: 150px;
-            height: 150px;
-            margin-left: 50%;
-            transform: translateX(-75px);
-        }
-
         .nav {
             width: 100%;
             display: flex;
@@ -55,11 +40,7 @@
             text-decoration: none;
             color: white;
             letter-spacing: 15px;
-        }
-
-        .nav .item:hover {
-            border-bottom: 3px solid rgb(35, 118, 183);
-            padding: 2px;
+            cursor:default;
         }
 
         .info,
@@ -204,30 +185,26 @@
 <body>
 	<jsp:include page="header.jsp" />
 	<div class="container box"> 
-        <div class="user-avatar">
-            <img src='${user.avatar}' alt="">
-        </div>
         <nav class="nav">
-            <a href="user.action?id=${user.id}" class="item"><i class="glyphicon glyphicon-home"></i>主页</a>
-            <a href="edit.action?user.id=${user.id}" class="item"><i class="glyphicon glyphicon-cog"></i> 设置</a>
+            <div class="item"><i class="glyphicon glyphicon-home"></i>主页</div>       
         </nav>
         <section class="info">
             <div class="users">
-                <img src='${user.avatar}' class="avatar" />
+                <img src='${user.avatar}' class="avatar" /> 
                 <ul class="user-info">
-                    <li><span class="label label-primary">用户ID</span>&nbsp;${sessionScope.user.id}</li>
-                    <li><span class="label label-primary">用户名</span>&nbsp;${sessionScope.user.username} </li>
+                    <li><span class="label label-primary">用户ID</span>&nbsp;${user.id}</li>
+                    <li><span class="label label-primary">用户名</span>&nbsp;${user.username} </li>
                     <li><span
-                            class="label label-primary">昵&nbsp;&nbsp;&nbsp;&nbsp;称</span>&nbsp;${sessionScope.user.nickname}
+                            class="label label-primary">昵&nbsp;&nbsp;&nbsp;&nbsp;称</span>&nbsp;${user.nickname}
                     </li>
-                    <li><span class="label label-warning">经验值</span>&nbsp;${sessionScope.user.score}</li>
+                    <li><span class="label label-warning">经验值</span>&nbsp;${user.score}</li>
                 </ul>
             </div>
             <div class="post">
                 <h5 class="title">帖子</h5>
                 <div class="content">
                 	<c:forEach var="post" items="${postList}">
-                	<c:if test="${post.user.id == sessionScope.user.id}">
+                	<c:if test="${post.user.id == user.id}">
                 		<div class="post-item">
                 			<c:if test="${post.topic.module.id == 1}">
                 				<i class="glyphicon glyphicon-play-circle"></i>&nbsp;&nbsp;动画

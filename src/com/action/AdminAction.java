@@ -15,8 +15,7 @@ import com.service.AdminService;
 	@Result(name="index", location="/admin/index.jsp"),
 	@Result(name="adminEdit", location="/admin/admin_edit.jsp"),
 	@Result(name="readmin", type="redirect", location="index.action"),
-	@Result(name="m_admin", location="/admin/m_admin.jsp"),
-	@Result(name="s_admin",location="/admin/s_admin.jsp"),
+
 
 })	
 @SuppressWarnings("serial")
@@ -44,14 +43,15 @@ public class AdminAction extends BaseAction{
 		}
 		// 将登录用户信息存入session
 		getSession().setAttribute("admin", loginAdmin);
-		if(admin.getRole()==1) {
+		/*if(admin.getRole()==1) {
 			return "readmin"; // 重定向到管理首页	
 		}else if(admin.getRole()==2){
 			msg="登陆成功";
 			return "s_admin";
 		}else {
 			return "m_admin";
-		}
+		}*/
+		return "readmin";
 		
 	}
 
