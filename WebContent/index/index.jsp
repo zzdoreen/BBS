@@ -71,6 +71,13 @@
 		text-overflow:ellipsis;
 		cursor:default;
 	}
+	.article-title{
+		display:inline-block;
+		width:500px;
+		overflow:hidden;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+	}
 </style>
 <body>
 	<div id="wrap">
@@ -97,7 +104,7 @@
 											<strong class='total' style="float: right">发帖总数: <span>${topic.postTotal}</span></strong>
 										</h4>
 										<div class="articleInfo">
-											<a style='color:#777' href="post.action?post.id=${topic.lastPost.id}" class="xi2"
+											<a style='color:#777' href="post.action?post.id=${topic.lastPost.id}" class="article-title"
 												title="最新发帖">${topic.lastPost.title}</a>
 											<cite style='color:#777'>${topic.lastPost.systimes}</cite>
 											<div class="row">

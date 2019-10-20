@@ -57,6 +57,12 @@
 		margin-top: 30px;
 		padding-left:10px;
 	}
+	.post-title{
+		color: #777;
+		width:70%;
+		display:inline-block;
+		overflow:hidden;
+	}
 	.total{
 		font-size:13px;
 	}
@@ -66,6 +72,21 @@
 	}
 	.heading{
 		margin-left:15px;
+	}
+	.article-title{
+		display:inline-block;
+		width:500px;
+		overflow:hidden;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+	}
+	.name {
+		width:100%;
+		overflow:hidden;
+		display:inline-block;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		cursor:default;
 	}
 </style>
 <body>
@@ -92,13 +113,13 @@
                                             <span>${topic.postTotal}</span></strong>
                                     </h4>
                                     <div class="articleInfo">
-                                        <a style='color:#777' href="post.action?post.id=${topic.lastPost.id}"
-                                            class="xi2" title="最新发帖">${topic.lastPost.title}</a>
+                                        <a href="post.action?post.id=${topic.lastPost.id}"
+                                            class="article-title" title="最新发帖">${topic.lastPost.title}</a>
                                         <cite style='color:#777'>${topic.lastPost.systimes}</cite>
                                         <div class="row">
                                             <div class="col-xs-4">
                                                 <div class="col-xs-4">
-                                                    <span>${topic.lastPost.user.nickname}</span>
+                                                    <span class='name'>${topic.lastPost.user.nickname}</span>
                                                 </div>
                                                 <div class="col-xs-4">
                                                     <span
