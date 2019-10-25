@@ -32,6 +32,7 @@ import com.service.UserService;
 	@Result(name="user", location="/index/user.jsp"),
 	@Result(name="edit", location="/index/userEdit.jsp"),
 	@Result(name="home", location="/index/home.jsp"),
+	@Result(name="search", location="/index/search.jsp"),
 	@Result(name="remsg", type="redirect", location="msg.action", params={"msg", "${msg}", "reurl", "${reurl}"}),
 })	
 @SuppressWarnings("serial")
@@ -46,7 +47,6 @@ public class IndexAction extends BaseAction{
 	private Topic topic;
 	private Post post;
 	private Reply reply;
-	private List<Users> userList;
 	private List<Topic> topicList;
 	private List<Module> moduleList;
 	private List<Post> postList;
@@ -277,6 +277,13 @@ public class IndexAction extends BaseAction{
 		user = userService.get(user.getId());
 		postList = postService.getList();
 		return "home";
+	}
+	
+	@Action("search")
+	public String search(){
+		moduleList = moduleService.getList();
+		postList = postService.getList();
+		return "search";
 	}
 	public Users getUser() {
 		return user;

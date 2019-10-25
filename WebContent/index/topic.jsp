@@ -59,7 +59,6 @@
 </head>
 <body>
 <jsp:include page="header.jsp" />
-
 <div class="container" style="margin-top:150px">
 			<div id="pt" class="bm cl">
 				<div class="z">
@@ -69,16 +68,17 @@
 					<a href="topic.action?topic.id=${topic.id}">${topic.name}</a>
 				</div>
 			</div>
+			
 			<table class="table table-hover panel panel-default">
 				<thead class='panel-heading'>
-					<th colspan="2">标题</th>
+					<td colspan="2">标题</td>
 					<td class="by">作者</td>
 					<td class="num">回复</td>
 					<td class="num">查看</td>
 					<td class="by">最后回复</td>
 				</thead>
 				<c:forEach var="post" items="${postList}">
-					<tbody id="post_${post.id}">
+					<tbody id="post_${post.id}" class='postlist'>
 						<tr>
 							<td>
 								<a href="post.action?post.id=${post.id}" title="新窗口打开" target="_blank">
@@ -86,7 +86,7 @@
 								</a>
 							</td>
 							<th class="common">
-								<a href="post.action?post.id=${post.id}" class="s xst">${post.title}</a>
+								<a href="post.action?post.id=${post.id}" class="s xst post-title">${post.title}</a>
 							</th>
 							<td class="by">
 								<cite><a>${post.user.nickname}</a></cite>
@@ -165,6 +165,24 @@
     UE.getEditor('newsEditor',{
     	initialFrameHeight: 150
     });
+    
+    var aPost = document.getElementsByClassName('post-title');
+    var aList = document.getElementsByClassName('postlist');
+    var oBtn = document.getElementsByClassName('searchBtn')[0];
+    var oSearch = document.getElementsByClassName('search-content')[0]
+    var arr = []
+    for(let i=0;i<aPost.length;i++){
+    	arr.push(aPost[i].innerText)
+    }
+    oBtn.onclick = function(){
+    	for(let i in arr){
+    		if(!arr[i].includes(oSearch.value)){
+    			aList[i].style.display = 'none'
+    		}
+    	}
+    	
+    }
+    
 </script>  
 </body>
 </html>

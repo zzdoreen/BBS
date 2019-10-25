@@ -78,13 +78,51 @@
 		white-space:nowrap;
 		text-overflow:ellipsis;
 	}
+	.search{
+		margin-bottom:80px;
+		margin-top:-80px;
+		display:flex;
+		justify-content:flex-end;
+		margin-right:200px;
+	}
+	.search .search-value{
+		width:300px;
+		background:rgba(255,255,255,0.7);
+	}
+	.search .box{
+		position:relative;
+	}
+	#search-btn{
+		position:absolute;
+		right:10px;
+		line-height:35px;
+	}
+	#search-btn:hover{
+		color:rgba(64, 109, 149, .8);
+	}
 </style>
+<script>
+	window.onload = function(){
+		var oBtn = document.getElementById('search-btn')
+		var oValue = document.getElementsByClassName('search-value')[0]	
+		oBtn.onclick = function(){
+				window.open('search.action#'+oValue.value,'_self')		
+		}
+		
+	}
+</script>
 <body>
 	<div id="wrap">
 		<jsp:include page="header.jsp" />
 		<div class='cl'>
-			<div >
-					<div>
+			<div>
+				<div>
+					<div class='search'>
+						<div class='box'>
+							<input type='search' class='search-value form-control '/>
+							<i id='search-btn' class='glyphicon glyphicon-search'></i>
+						</div>
+					</div>	
 						<c:forEach var="module" items="${moduleList}">
 							<div class="container module">
 								<div id="title">
