@@ -6,12 +6,25 @@
 <title>编辑用户</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" href="css/bootstrap.min.css" />
+<style>
+.inner .avatar{
+	width:150px;
+	height:150px;
+	margin-bottom:20px;
+	border-radius:50%;
+	margin-left:30%;
+	border:1px solid #ccc;
+	box-shadow: 0 2px 5px 2px #ccc;
+	
+}
+</style>
 </head>
 <body>
 	<%@include file="header.jsp"%>
 	<div class="outer">
 	<div class="inner">
 	<form class="form-horizontal" action="userUpdate.action" method="post">
+		<img src='${user.avatar}' class='avatar' />
 		<input type="hidden" name="user.id" value="${user.id}">
 		<input type="hidden" name="user.username" value="${user.username}">
 		<div class="form-group">

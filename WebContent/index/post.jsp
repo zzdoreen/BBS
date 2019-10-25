@@ -31,6 +31,8 @@
 			color: white;
 		}
 		.avatar {
+			width:20%;
+			padding:auto 0;
 			background:#98a2b9;
 			text-align: center;
 			color: white;
@@ -48,28 +50,31 @@
 
 		.author {
 			border-bottom: 1px dashed #ccc;
-			width: 100%
+			display:flex;
 		}
-
+		.container{
+			padding:0;
+		}
 		.content {
-			margin-top: 10px;
-			width: 80%;
+			flex-grow:1;
 			white-space: wrap;
+			padding:10px 20px 50px 20px;
 			position: relative;
 		}
 
-		.time {
+		.content .time {
 			position: absolute;
 			right: 20px;
 			font-size: 12px;
-			bottom: -150px;
+			bottom: 10px;
 		}
-
 		.quick-post {
 			display: flex;
-			position: absolute;
 			width: 50%;
-			bottom: -170px;
+			position: absolute;
+			left: 20px;
+			font-size: 12px;
+			bottom: 10px;
 		}
 
 		.commit-title {
@@ -120,26 +125,20 @@
 			</div>
 			<!-- 楼主part -->
 			<div class="container">
-				<div class="author row">
-					<div class="col-xs-2 avatar">
-						<a target="_blank" href='home.action?user.id=${post.user.id}'>
+				<div class="author">
+					<div class="avatar">
+						<a target="_blank" href='home.action?user.id=${post.user.id}'  style='display:block'>
 							<img src='${post.user.avatar}'>
 						</a>
-						<div class="label label-danger">楼主</div>
+						<span class="label label-danger">楼主</span>
 						<p class="nickname">
 							<a href="home.action?user.id=${post.user.id}" target="_blank" title='${post.user.nickname}'>${post.user.nickname}</a>
 						</p>
 						<p>积分: ${post.user.score}</p>
 					</div>
-					<div class="col-xs-10 content">
-						<div class="content">
-							${post.content}
-						</div>
-
-						<div class="time">
-							发表于 <span>${post.systimes}</span>
-						</div>
-
+					
+					<div class="content">
+						<span class='post-content'>${post.content}</span>
 						<c:if test="${sessionScope.user!=null}">
 							<form method="post" autocomplete="off" action="reply.action">
 								<div class="quick-post">
@@ -152,8 +151,11 @@
 									</button>
 								</div>
 							</form>
-						</c:if>
-					</div>
+						</c:if>					
+						<div class="time">
+							发表于 <span>${post.systimes}</span>
+						</div>
+						</div>					
 				</div>
 			</div>
 
@@ -161,8 +163,8 @@
 			<div class="commit">
 				<c:forEach var="reply" items="${replyList}" varStatus="status">
 					<div class="container">
-						<div class="author row">
-							<div class="col-xs-2 avatar">
+						<div class="author">
+							<div class="avatar">
 								<a target="_blank" href='home.action?user.id=${reply.user.id}'><img src='${reply.user.avatar}'></a>
 								<p class="name">
 									<a title='${reply.user.nickname}'
@@ -170,11 +172,8 @@
 								</p>
 								<p>积分: ${reply.user.score}</p>
 							</div>
-							<div class="col-xs-10 content">
-								<div class="content">
-									${reply.content}
-								</div>
-
+							<div class="content">
+								<span class='post-content'>${reply.content}</span>
 								<div class="time">
 									<c:if test="${status.count==1}">沙发</c:if>
 									<c:if test="${status.count>=2}">${status.count}楼</c:if>

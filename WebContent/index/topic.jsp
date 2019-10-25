@@ -11,6 +11,12 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../ueditor/ueditor.config.js"></script>  
+<script type="text/javascript" src="../ueditor/ueditor.all.js"></script> 
+<script>
+        var UEDITOR_HOME_URL = "/ueditor/";//从项目的根目录开始
+         
+</script>
 <style>
 	.article {
 		margin-top: 50px;
@@ -141,12 +147,10 @@
 								<input type="text" id="subject" name="post.title" class="form-control"
 									style="width:912px;" placeholder="请输入标题...">
 							</div>
-							<div class="cl">
-								<div class="hasfsl" id="fastposteditor">
-									<textarea rows="6" cols="80" name="post.content" id="fastpostmessage"
-										class="form-control" placeholder="请输入内容..."></textarea>
-								</div>
-							</div>
+							
+							<textarea rows="6" cols="80" name="post.content" 
+							 placeholder="请输入内容..." id="newsEditor" ></textarea>
+								
 							<button type="submit" name="topicsubmit" id="fastpostsubmit" value="topicsubmit"
 								class="btn btn-primary">
 								发表帖子
@@ -157,5 +161,10 @@
 			</div>
 	
 </div>
+<script type="text/javascript">  
+    UE.getEditor('newsEditor',{
+    	initialFrameHeight: 150
+    });
+</script>  
 </body>
 </html>

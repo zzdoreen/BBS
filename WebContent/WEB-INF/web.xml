@@ -20,7 +20,8 @@
 	<!-- struts拦截器配置 -->
     <filter>
         <filter-name>struts2</filter-name>
-        <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+        <filter-class>com.filter.UeditorFilter</filter-class>
+        <!-- <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class> -->
     </filter>
 
 	<!-- struts拦截器过滤路径 -->
@@ -50,7 +51,6 @@
 		<filter-name>characterEncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
 
 	<!-- 默认主页 -->
 	<welcome-file-list>
