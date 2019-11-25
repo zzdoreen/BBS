@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>帖子列表</title>
+<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 <meta charset="utf-8"/>
 <style>
 .post-list .post-head {

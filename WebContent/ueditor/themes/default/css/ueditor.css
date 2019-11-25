@@ -123,6 +123,7 @@ div.edui-box {
     zoom: 1;
     width:auto;
     height:auto;
+    background: #fff;
 }
 
 .edui-default .edui-toolbar .edui-button,

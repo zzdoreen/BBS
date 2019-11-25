@@ -6,9 +6,7 @@
 
 <head>
 	<title>用户注册</title>
-	<link href="css/style_1_common.css" rel="stylesheet" type="text/css">
-	<link href="css/style_1_forum_index.css" rel="stylesheet" type="text/css">
-	<link href="css/style_1_forum_forumdisplay.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/reset.css">
 	<style>
@@ -102,7 +100,7 @@
 	<div class="container">
 		<form action="register.action" method="POST" class="left input-group">
 			<h1>Welcome!</h1>
-			<input type="text" placeholder="Username" name="user.avatar" required value="http://img0.imgtn.bdimg.com/it/u=401447366,3975072878&fm=26&gp=0.jpg" style='display:none'>
+			<input type="text" placeholder="Username" name="user.avatar" required value="https://pic3.zhimg.com/80/v2-465e3d5c27309808554edc5230bc53bb_hd.jpg" style='display:none'>
 			<input type="text" placeholder="Username" name="user.username" required>
 			<input type="password" placeholder="password" name="user.password" required>
 			<input type="password" placeholder="check password" name="user.passwordNew" required>

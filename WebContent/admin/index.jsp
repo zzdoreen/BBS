@@ -3,6 +3,7 @@
 <html>
 <head>
 <title>后台管理</title>
+<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <style>
 body{

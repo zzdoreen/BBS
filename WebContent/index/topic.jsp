@@ -5,6 +5,7 @@
 <html>
 <head>
 <title>${topic.name}</title>
+<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 <link href="css/style_1_common.css"rel="stylesheet" type="text/css">
 <link href="css/style_1_forum_forumdisplay.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/reset.css">
@@ -59,7 +60,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp" />
-<div class="container" style="margin-top:150px">
+<div class="container" style="margin-top:30px">
 			<div id="pt" class="bm cl">
 				<div class="z">
 					<a href="index.action" class="nvhm" title="首页">首页</a><em>&raquo;</em>
@@ -165,24 +166,6 @@
     UE.getEditor('newsEditor',{
     	initialFrameHeight: 150
     });
-    
-    var aPost = document.getElementsByClassName('post-title');
-    var aList = document.getElementsByClassName('postlist');
-    var oBtn = document.getElementsByClassName('searchBtn')[0];
-    var oSearch = document.getElementsByClassName('search-content')[0]
-    var arr = []
-    for(let i=0;i<aPost.length;i++){
-    	arr.push(aPost[i].innerText)
-    }
-    oBtn.onclick = function(){
-    	for(let i in arr){
-    		if(!arr[i].includes(oSearch.value)){
-    			aList[i].style.display = 'none'
-    		}
-    	}
-    	
-    }
-    
 </script>  
 </body>
 </html>

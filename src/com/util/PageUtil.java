@@ -58,9 +58,9 @@ public class PageUtil {
 		}else {
 			buf.append("<a class='btn btn-primary' href='").append(url).append("?page=").append(pages).append(queryString).append("'>尾页</a>\n");
 		}
-		buf.append("<input type='text' class='form-control' style='display:inline;width:60px;' value='").append(page).append("'/>&nbsp;");
-		buf.append("<a class='btn btn-primary' href='javascript:void(0);' onclick='location.href=\"").append(url).append("?page=").append("\"+(this.previousSibling.value)+\"").append(queryString).append("\"'>GO</a>\n");
-		buf.append("</div>\n");
+		//buf.append("<input type='text' class='form-control' style='display:inline;width:60px;' value='").append(page).append("'/>&nbsp;");
+		//buf.append("<a class='btn btn-primary' href='javascript:void(0);' onclick='location.href=\"").append(url).append("?page=").append("\"+(this.previousSibling.value)+\"").append(queryString).append("\"'>GO</a>\n");
+		//buf.append("</div>\n");
 		return buf.toString();
 	}
 

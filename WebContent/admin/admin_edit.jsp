@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>管理员编辑</title>
+<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 <meta charset="utf-8" />
 <link rel="stylesheet" href="css/bootstrap.css" />
 </head>

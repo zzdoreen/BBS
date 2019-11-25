@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>个人中心</title>
+<title>搜索頁面</title>
+<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src='js/jquery-3.3.1.min.js'></script>
@@ -64,6 +65,9 @@
 		transform:translateX(-50%);
 		display:none;
 	}
+	.search{
+		display: none !important;
+	}
 </style>
 </head>
 <body>
@@ -92,10 +96,10 @@
 								</a>
 							</td>
 							<th class="common">
-								<a href="post.action?post.id=${post.id}" class="s xst post-title">${post.title}</a>
+								<a href="post.action?post.id=${post.id}" class="s xst post-title">【${post.topic.name}】${post.title}</a>
 							</th>
 							<td class="by">
-								<cite><a>${post.user.nickname}</a></cite>
+								<a>${post.user.nickname}</a>
 								<em><span><span>${post.systimes}</span></span></em>
 							</td>
 							<td class="num">

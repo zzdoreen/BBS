@@ -5,6 +5,7 @@
 <html>
 <head>
 	<title>【${post.topic.name}】${post.title}</title>
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="fonts/iconfont.css">
@@ -36,6 +37,7 @@
 			background:#98a2b9;
 			text-align: center;
 			color: white;
+			flex-shrink:0;
 		}
 
 		.avatar img {
@@ -97,23 +99,15 @@
 
 	</style>
 </head>
-
+<script type="text/javascript" src="../ueditor/ueditor.config.js"></script>  
+<script type="text/javascript" src="../ueditor/ueditor.all.js"></script> 
+<script>
+        var UEDITOR_HOME_URL = "/ueditor/";//从项目的根目录开始
+         
+</script>
 <body>
 	<jsp:include page="header.jsp" />
-	<!-- <div class="container" style="margin-top:150px">
-				<div id="pt" class="ibm cl ">
-					<div class="z">
-						<a href="index.action" class="nvhm" title="首页">首页</a><em>&raquo;</em>
-						<a href="index.action">论坛首页</a><em>&rsaquo;</em>
-						<a
-							href="module.action?module.id=${post.topic.module.id}">${post.topic.module.name}</a><em>&rsaquo;</em>
-						<a href="topic.action?topic.id=${post.topic.id}">${post.topic.name}</a><em>&rsaquo;</em>
-						<a href="post.action?post.id=${post.id}">${post.title}</a>
-
-					</div>
-				</div>
-			</div> -->
-	<div style="margin-top:170px" class="container">
+	<div style="margin-top:50px" class="container">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				【${post.topic.name}】${post.title}
@@ -228,8 +222,9 @@
 						<div class="cl">
 							<div class="hasfsl" id="fastposteditor">
 								<div class="area">
-									<textarea rows="6" cols="80" name="reply.content" id="fastpostmessage"
-										class="form-control" placeholder="请输入回复内容..."></textarea>
+									<textarea rows="6" cols="80" name="reply.content" 
+							 placeholder="请输入内容..." id="newsEditor" ></textarea>
+								
 								</div>
 							</div>
 						</div>
@@ -245,5 +240,10 @@
 		</div>
 
 	</div>
+<script type="text/javascript">  
+    UE.getEditor('newsEditor',{
+    	initialFrameHeight: 150
+    });
+</script> 
 </body>
 </html>

@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>个人中心</title>
+<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src='js/jquery-3.3.1.min.js'></script>
@@ -17,7 +18,7 @@
         }
 
         .container.box {
-            margin-top: 200px;
+            margin-top: 70px;
             display: flex;
             flex-direction: column;
             justify-content: center;

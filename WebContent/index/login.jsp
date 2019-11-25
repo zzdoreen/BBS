@@ -5,9 +5,7 @@
 
 <head>
 	<title>用户登录</title>
-	<link href="css/style_1_common.css" rel="stylesheet" type="text/css">
-	<link href="css/style_1_forum_index.css" rel="stylesheet" type="text/css">
-	<link href="css/style_1_forum_forumdisplay.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/reset.css">
 	<style>

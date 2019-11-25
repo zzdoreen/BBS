@@ -5,6 +5,7 @@
 
 <head>
 	<title>提示信息</title>
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 	<meta charset="utf-8" />
 	<link href="css/style_1_common.css" rel="stylesheet" type="text/css">
 	<link href="css/style_1_forum_index.css" rel="stylesheet" type="text/css">
@@ -14,10 +15,10 @@
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<style>
-		.box {
+		#ct .box {
 			width: 50%;
 			margin-left: 50%;
-			transform: translateX(-50%);
+			transform: translate(-50%,-60%);
 			display: flex;
 			flex-direction: column;
 			background: #7394ba;
@@ -28,26 +29,26 @@
 		}
 		@keyframes in{
 			0%{
-				transform: scale(1) translateX(-50%)
+				transform: scale(1) translate(-50%,-60%)
 			}
 			50%{
-				transform: scale(1.2) translateX(-50%);
+				transform: scale(1.2) translate(-50%,-60%);
 			}
 			100%{
-				transform: scale(1) translateX(-50%);
+				transform: scale(1) translate(-50%,-60%);
 			}
 		}
-		.box span,p {
+		#ct .box span,p {
 			z-index:10000;
 			margin: auto;
 			color: white;
 		}
-		.box span {
+		#ct .box span {
 			font-size: 60px;
 			margin-bottom: 10px;
 			color: white;
 		}
-		.box a{
+		#ct .box a{
 			display: inline-block;
 			color: white;
 			margin-bottom: 20px;
@@ -59,7 +60,6 @@
 <body>
 	<jsp:include page="header.jsp" />
 	<div id="ct" class="wp cl w">
-		<div class="nfl">
 			<div class="box">
 				<span class="glyphicon glyphicon-ok"></span>
 				<p>${msg}</p>
@@ -68,7 +68,6 @@
 					<script type="text/javascript">setTimeout( "window.location.href ='${reurl}';", 1000);</script>
 				</p>
 			</div>
-		</div>
 	</div>
 
 

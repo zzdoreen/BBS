@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>${module.name}</title>
+<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="fonts/iconfont.css">
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -12,7 +13,7 @@
 </head>
 <style>
 .cl {
-		margin-top: 170px !important;
+		margin-top: 50px !important;
 	}
 	.module{
 		padding:50px;

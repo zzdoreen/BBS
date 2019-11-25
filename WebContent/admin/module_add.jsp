@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>添加版块</title>
+<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 <meta charset="utf-8" />
 </head>
 <body>

@@ -4,14 +4,42 @@
 <html>
 <head>
 <title>添加用户</title>
+<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 <meta charset="utf-8" />
-<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
 </head>
+<style>
+.add-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            position: relative;
+            margin-left: 35%;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 2px 2px #ddd;
+        }
+        .cover::after{
+            content: ' ';
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            transform: translateX(-100%);
+            position: absolute;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            border: 1px solid #ccc;
+        }
+</style>
 <body>
 	<%@include file="header.jsp"%>
 	<div class="outer">
 	<div class="inner">
 	<form class="form-horizontal" action="userSave.action" method="post">
+		<div class="cover">
+        <img src='https://pic3.zhimg.com/80/v2-465e3d5c27309808554edc5230bc53bb_hd.jpg' class='add-avatar' />
+    </div>
+		<input type='text' value='https://pic3.zhimg.com/80/v2-465e3d5c27309808554edc5230bc53bb_hd.jpg' name="user.avatar"  required="required" style='display:none'/>
 		<div class="form-group">
 			<label for="input_name" class="col-sm-2 control-label">用户名</label>
 			<div class="col-sm-6">

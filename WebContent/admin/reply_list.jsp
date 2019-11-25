@@ -4,8 +4,24 @@
 <html>
 <head>
 <title>评论列表</title>
+<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 <meta charset="utf-8"/>
 </head>
+<style>
+.replyList{
+	max-height:60px;
+	overflow:hidden;
+}
+
+/*.replyList td{
+	max-height:60px;
+	overflow:hidden;
+}*/	
+.replyList td p{
+	max-height:30px;
+	overflow:hidden;
+}
+</style>
 <body>
 	<%@include file="header.jsp" %>
 	<div class="outer">
@@ -41,16 +57,16 @@
 	</tr>
 	
 	<c:forEach var="reply" items="${replyList}">
-         <tr>
-         	<td><p>${reply.content}</p></td>
+         <tr class='replyList'>
+         	<td>${reply.content}</td>
 			<td><p>${reply.systimes}</p></td>
 			<td>
 				<a class="btn btn-danger" href="replyDelete.action?reply.id=${reply.id}&post.id=${post.id}&moduleid=${moduleid}&topicid=${topic.id}">删除</a>
 			</td>
        	</tr>
      </c:forEach>
-     <tr>${pageTool}</tr>
 </table>
+${pageHtml}<br/>
 </div>
 </div>
 </body>
