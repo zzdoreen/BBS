@@ -15,8 +15,6 @@ import com.util.PageUtil;
 @Namespace("/admin")
 @Results({ // 配置返回的具体页面
 	@Result(name="moduleList", location="/admin/module_list.jsp"),
-	@Result(name="moduleAdd", location="/admin/module_add.jsp"),
-	@Result(name="moduleEdit", location="/admin/module_edit.jsp"),
 	@Result(name="remoduleList", type="redirect", location="moduleList.action"),
 })	
 @SuppressWarnings("serial") // 为了消除serialVersionUID警告, 无业务意义
@@ -28,7 +26,6 @@ public class ModuleAction extends BaseAction{
 	@Autowired
 	private ModuleService moduleService;
 	
-	
 	/**
 	 * 列表
 	 * @return
@@ -39,16 +36,7 @@ public class ModuleAction extends BaseAction{
 		pageHtml = PageUtil.getPageTool(servletRequest, moduleService.getTotal(), page, size);
 		return "moduleList";
 	}
-	
-	/**
-	 * 添加
-	 * @return
-	 */
-	@Action("moduleAdd")
-	public String moduleAdd(){
-		return "moduleAdd";
-	}
-	
+
 	/**
 	 * 保存
 	 * @return 
@@ -58,16 +46,6 @@ public class ModuleAction extends BaseAction{
 	public String moduleSave(){
 		moduleService.save(module);
 		return "remoduleList";
-	}
-	
-	/**
-	 * 编辑
-	 * @return
-	 */
-	@Action("moduleEdit")
-	public String moduleEdit(){
-		module = moduleService.get(module.getId());
-		return "moduleEdit";
 	}
 	
 	/**

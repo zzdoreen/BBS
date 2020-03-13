@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>搜索頁面</title>
+<title>搜索页面</title>
 <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -68,6 +68,12 @@
 	.search{
 		display: none !important;
 	}
+	.table tbody tr th,.table,.table tbody tr td ,.table>tbody {
+		border: none;
+	}
+	.table tbody tr{
+		border-bottom: #7394ba 1px dashed;
+	}
 </style>
 </head>
 <body>
@@ -85,11 +91,9 @@
 					<td class="by">作者</td>
 					<td class="num">回复</td>
 					<td class="num">查看</td>
-					<td class="by">最后回复</td>
 				</thead>
 				<c:forEach var="post" items="${postList}">
-					<tbody id="post_${post.id}" class='postlist'>
-						<tr>
+						<tr class='postlist'>
 							<td>
 								<a href="post.action?post.id=${post.id}" title="新窗口打开" target="_blank">
 									<img src='${ post.user.avatar }' class='post-avatar'/>
@@ -100,20 +104,14 @@
 							</th>
 							<td class="by">
 								<a>${post.user.nickname}</a>
-								<em><span><span>${post.systimes}</span></span></em>
 							</td>
 							<td class="num">
-								<a class="xi2">${post.replyCount}</a>
+								<span>${post.replyCount}</span>
 							</td>
 							<td class="num">
-								<em>${post.viewCount}</em>
-							</td>
-							<td class="by">
-								<cite><a>${post.lastReply.user.nickname}</a></cite>
-								<em><a><span>${post.lastReply.systimes}</span></a></em>
+								<span>${post.viewCount}</span>
 							</td>
 						</tr>
-					</tbody>
 				</c:forEach>
 			</table>
 	</div>

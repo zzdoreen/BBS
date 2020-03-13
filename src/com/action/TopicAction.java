@@ -17,8 +17,6 @@ import com.util.PageUtil;
 @Namespace("/admin")
 @Results({ // 配置返回的具体页面
 	@Result(name="topicList", location="/admin/topic_list.jsp"),
-	@Result(name="topicAdd", location="/admin/topic_add.jsp"),
-	@Result(name="topicEdit", location="/admin/topic_edit.jsp"),
 	@Result(name="retopicList", type="redirect", location="topicList.action?moduleid=${moduleid}"),
 })	
 @SuppressWarnings("serial") // 为了消除serialVersionUID警告, 无业务意义
@@ -53,16 +51,6 @@ public class TopicAction extends BaseAction{
 	}
 	
 	/**
-	 * 添加
-	 * @return
-	 */
-	@Action("topicAdd")
-	public String topicAdd(){
-		moduleList = moduleService.getList(); // 获取全部
-		return "topicAdd";
-	}
-	
-	/**
 	 * 保存
 	 * @return 
 	 * 成功后重定向到列表页
@@ -71,17 +59,6 @@ public class TopicAction extends BaseAction{
 	public String topicSave(){
 		topicService.save(topic);
 		return "retopicList";
-	}
-	
-	/**
-	 * 编辑
-	 * @return
-	 */
-	@Action("topicEdit")
-	public String topicEdit(){
-		moduleList = moduleService.getList(); // 获取全部
-		topic = topicService.get(topic.getId());
-		return "topicEdit";
 	}
 	
 	/**

@@ -56,18 +56,29 @@
 		border:1px solid #ccc;
 		box-shadow:0 0 2px 2px #7394ba;
 	}
+	
+	.table tbody tr th,.table,.table tbody tr td ,.table>tbody {
+		border: none;
+	}
+	.table tbody tr{
+		border-bottom: #7394ba 1px dashed;
+	}
+	.breadcrumb{
+		background: none;
+		float: left;
+		margin-bottom: -5px;
+	}
 </style>
 </head>
 <body>
 <jsp:include page="header.jsp" />
 <div class="container" style="margin-top:30px">
 			<div id="pt" class="bm cl">
-				<div class="z">
-					<a href="index.action" class="nvhm" title="首页">首页</a><em>&raquo;</em>
-					<a href="index.action">论坛首页</a><em>&rsaquo;</em>
-					<a href="module.action?module.id=${topic.module.id}">${topic.module.name}</a><em>&rsaquo;</em>
-					<a href="topic.action?topic.id=${topic.id}">${topic.name}</a>
-				</div>
+				<ol class="breadcrumb">
+					<li><a href="index.action">论坛首页</a></li>
+					<li><a href="module.action?module.id=${topic.module.id}">${topic.module.name}</a></li>
+					<li class="topic.action?topic.id=${topic.id}">${topic.name}</li>
+				  </ol>
 			</div>
 			
 			<table class="table table-hover panel panel-default">
@@ -79,7 +90,6 @@
 					<td class="by">最后回复</td>
 				</thead>
 				<c:forEach var="post" items="${postList}">
-					<tbody id="post_${post.id}" class='postlist'>
 						<tr>
 							<td>
 								<a href="post.action?post.id=${post.id}" title="新窗口打开" target="_blank">
@@ -90,21 +100,20 @@
 								<a href="post.action?post.id=${post.id}" class="s xst post-title">${post.title}</a>
 							</th>
 							<td class="by">
-								<cite><a>${post.user.nickname}</a></cite>
-								<em><span><span>${post.systimes}</span></span></em>
+								<cite><a>${post.user.nickname}</a></cite><br>
+								<span>${post.systimes}</span>
 							</td>
 							<td class="num">
-								<a class="xi2">${post.replyCount}</a>
+								<span>${post.replyCount}</span>
 							</td>
 							<td class="num">
-								<em>${post.viewCount}</em>
+								<span>${post.viewCount}</span>
 							</td>
 							<td class="by">
-								<cite><a>${post.lastReply.user.nickname}</a></cite>
-								<em><a><span>${post.lastReply.systimes}</span></a></em>
+								<cite><a>${post.lastReply.user.nickname}</a></cite><br>
+								<span>${post.lastReply.systimes}</span>
 							</td>
 						</tr>
-					</tbody>
 				</c:forEach>
 			</table>
 			<div>

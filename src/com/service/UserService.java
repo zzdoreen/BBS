@@ -1,6 +1,5 @@
 package com.service;
 
-import java.io.File;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dao.UserDao;
+import com.entity.Module;
 import com.entity.Users;
-import com.util.Base64Utils;
-
 import com.util.SafeUtil;
 
 @Service	// 注解为service层spring管理bean
@@ -89,7 +87,11 @@ public class UserService {
 	public List<Users> getList(int page, int size) {
 		return userDao.selectList((page-1)*size, size);
 	}
-
+	
+	public List<Users> getList() {
+		return userDao.selectList();
+	}
+	
 	/**
 	 * 更新
 	 * @param user
@@ -100,12 +102,11 @@ public class UserService {
 		old.setNickname(user.getNickname());
 		old.setAvatar(user.getAvatar());
 		old.setScore(user.getScore());
+		old.setSex(user.getSex());
+		old.setProvince(user.getProvince());
 		if (!user.getPassword().trim().isEmpty()) {
 			old.setPassword(SafeUtil.encode(user.getPassword()));
 		}
-		//String a = Base64Utils.ImageToBase64("C:/Users/zengzhi/Desktop/img/admin-login.jpeg");
-		//System.out.println(a);
-		//System.out.println(Base64Utils.Base64ToImage(a));
 		return userDao.update(old);
 	}
 	

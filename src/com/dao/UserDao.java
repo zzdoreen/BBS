@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.entity.Module;
 import com.entity.Users;
 
 @Repository // 注册dao层bean等同于@Component
@@ -30,7 +31,9 @@ public class UserDao extends BaseDao{
 		return getSession().createQuery("from Users order by id desc", Users.class)
 				.setFirstResult(begin).setMaxResults(size).list();
 	}
-	
+	public List<Users> selectList(){
+		return getSession().createQuery("from Users order by id desc", Users.class).list();
+	}
 	/**
 	 * 获取总数
 	 * @return

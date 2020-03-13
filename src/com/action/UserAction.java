@@ -15,8 +15,6 @@ import com.util.PageUtil;
 @Namespace("/admin")
 @Results({ // 配置返回的具体页面
 	@Result(name="userList", location="/admin/user_list.jsp"),
-	@Result(name="userAdd", location="/admin/user_add.jsp"),
-	@Result(name="userEdit", location="/admin/user_edit.jsp"),
 	@Result(name="reuserList", type="redirect", location="userList.action"),
 })
 @SuppressWarnings("serial") // 为了消除serialVersionUID警告, 无业务意义
@@ -41,15 +39,6 @@ public class UserAction extends BaseAction{
 	}
 	
 	/**
-	 * 添加
-	 * @return
-	 */
-	@Action("userAdd")
-	public String userAdd(){
-		return "userAdd";
-	}
-	
-	/**
 	 * 保存
 	 * @return 
 	 * 成功后重定向到列表页
@@ -62,16 +51,6 @@ public class UserAction extends BaseAction{
 		}
 		userService.add(user);
 		return "reuserList";
-	}
-	
-	/**
-	 * 编辑
-	 * @return
-	 */
-	@Action("userEdit")
-	public String userEdit(){
-		user = userService.get(user.getId());
-		return "userEdit";
 	}
 	
 	/**

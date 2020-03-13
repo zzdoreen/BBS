@@ -13,8 +13,8 @@
 </head> 
 <style>
         .bg {
-            background-image: url('img/t.jpg')!important; 
-            background-position: 0% 30% !important;         
+            background-image: url('img/bg3.jpeg')!important; 
+            background-position: 0% 50% !important;         
         }
 
         .container.box {
@@ -221,6 +221,8 @@
                     <li><span
                             class="label label-primary">昵&nbsp;&nbsp;&nbsp;&nbsp;称</span>&nbsp;${sessionScope.user.nickname}
                     </li>
+                    <li><span class="label label-primary">性&nbsp;&nbsp;&nbsp;&nbsp;别</span>&nbsp;${sessionScope.user.sex} </li>
+                    <li><span class="label label-primary">省&nbsp;&nbsp;&nbsp;&nbsp;份</span>&nbsp;${sessionScope.user.province} </li>
                     <li><span class="label label-warning">经验值</span>&nbsp;${sessionScope.user.score}</li>
                 </ul>
             </div>

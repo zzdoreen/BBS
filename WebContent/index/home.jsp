@@ -13,7 +13,7 @@
 </head> 
 <style>
         .bg {
-            background-image: url('img/t.jpg')!important; 
+            background-image: url('img/bg3.jpeg')!important; 
             background-position: 0% 30% !important;         
         }
 
@@ -198,6 +198,8 @@
                     <li><span
                             class="label label-primary">昵&nbsp;&nbsp;&nbsp;&nbsp;称</span>&nbsp;${user.nickname}
                     </li>
+                    <li><span class="label label-primary">性&nbsp;&nbsp;&nbsp;&nbsp;别</span>&nbsp;${user.sex} </li>
+                    <li><span class="label label-primary">省&nbsp;&nbsp;&nbsp;&nbsp;份</span>&nbsp;${user.province} </li>
                     <li><span class="label label-warning">经验值</span>&nbsp;${user.score}</li>
                 </ul>
             </div>

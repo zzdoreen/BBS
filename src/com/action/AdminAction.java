@@ -14,9 +14,7 @@ import com.service.AdminService;
 	@Result(name="login", location="/admin/login.jsp"),
 	@Result(name="index", location="/admin/index.jsp"),
 	@Result(name="adminEdit", location="/admin/admin_edit.jsp"),
-	@Result(name="readmin", type="redirect", location="index.action"),
-
-
+	@Result(name="readmin", type="redirect", location="index.action")
 })	
 @SuppressWarnings("serial")
 public class AdminAction extends BaseAction{

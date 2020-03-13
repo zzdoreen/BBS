@@ -13,8 +13,8 @@
 </head>
 <style>
         .bg {
-            background-image: url('img/t.jpg')!important; 
-            background-position: 0% 30% !important;         
+            background-image: url('img/bg3.jpeg')!important; 
+            background-position: 0% 50% !important;         
         }
 
         .container.box {
@@ -201,6 +201,13 @@
         	display:block;
         	color:#f5f5f5
         }
+        
+        select{
+        	padding:5px 20px;
+        	margin-bottom:5px;
+        	border:1px solid #ccc;
+        	border-radius:5px;
+        }
     </style>
 <body>
 	<jsp:include page="header.jsp" />
@@ -215,19 +222,64 @@
         <form class="form-horizontal setting" action="update.action" method="post">
             <div class="reset-avatar">
                 <img  id="pictures" class="img_wrap" src='${user.avatar}'>
-                <button class="file  btn btn-primary">修改头像
-                	
+                <button class="file  btn btn-primary">修改头像  	
                     <input type="file" id="upload" accept="image/*" capture="camera"  value="img/head.jpeg"/>
                 </button>
             </div>
             <div class="reset-info">
                 <input type="text" name="user.avatar" value="${user.avatar}" id='user-avatar' style="display:none" required="required" class="form-control" >
                 <label for="">用户ID：</label><input name="user.id" type="hidden" value="${user.id}" class="form-control">
-                <input type="text" class="form-control" id="" value="${user.id}" required="required" disabled="disabled">
+                <input type="text" class="form-control" value="${user.id}" required="required" disabled="disabled">
                 <label for="">用户名：</label><input name="user.username" type="hidden" value="${user.username}" class="form-control">
-                <input type="text" class="form-control" id="" value="${user.username}" required="required" disabled="disabled">
+                <input type="text" class="form-control"  value="${user.username}" required="required" disabled="disabled">
                 <label for="">积分：</label><input name="user.score" type="hidden" value="${user.score}" class="form-control">
-                <input type="text" class="form-control" id="" value="${user.score}" required="required" disabled="disabled">
+                <input type="text" class="form-control" value="${user.score}" required="required" disabled="disabled">
+                <br>
+                <label for="">性别：</label>
+                <select id='sexSelect'>
+                	<option value='女' >女</option>
+                	<option value='男' >男</option>
+                </select>
+                <input id='sex' name="user.sex"  value="${user.sex}" class="form-control" style='display:inline-block'>
+         		
+                <label style='margin-left:10%'>省份：</label>
+                <select id='proSelect'>
+               		<option value="北京">北京</option>
+               		<option value="天津">天津</option>
+               		<option value="上海">上海</option>
+               		<option value="重庆">重庆</option>
+               		<option value="湖南">湖南</option>
+               		<option value="湖北">湖北</option>
+               		<option value="广东">广东</option>
+               		<option value="广西">广西</option>
+               		<option value="河南">河南</option>
+               		<option value="河北">河北</option>
+               		<option value="山东">山东</option>
+               		<option value="山西">山西</option>
+               		<option value="江苏">江苏</option>
+               		<option value="浙江">浙江</option>
+               		<option value="江西">江西</option>
+               		<option value="黑龙江">黑龙江</option>
+               		<option value="新疆">新疆</option>
+               		<option value="云南">云南</option>
+               		<option value="贵州">贵州</option>
+               		<option value="福建">福建</option>
+               		<option value="吉林">吉林</option>
+               		<option value="安徽">安徽</option>
+               		<option value="四川">四川</option>
+               		<option value="西藏">西藏</option>
+               		<option value="辽宁">辽宁</option>
+               		<option value="青海">青海</option>
+               		<option value="甘肃">甘肃</option>
+               		<option value="陕西">陕西</option>
+               		<option value="内蒙古">内蒙古</option>
+               		<option value="台湾">台湾</option>
+               		<option value="香港">香港</option>
+               		<option value="澳门">澳门</option>
+               	</select>
+                <input id='province' name="user.province"  value="${user.province}" class="form-control">
+               	
+                <br>
                 <label for="">昵称：</label><input type="text" name="user.nickname" value="${user.nickname}" required="required" class="form-control" >
                 <label for="">密码：</label><input type="text" name="user.password"  class="form-control">
                 <button type='submit'  class="btn btn-primary">确定</button>
@@ -242,6 +294,22 @@
     var oBtn = document.getElementById('btn')
     var pic = document.getElementById('pictures')
     var oAvatar = document.getElementById('upload')
+    var oProvince = document.getElementById('province')
+    var oSex = document.getElementById('sex')
+    var oSelectSex = document.getElementById('sexSelect')
+    var oSelectPro = document.getElementById('proSelect')
+    oSex.style.display = 'none' 
+    oProvince.style.display = 'none' 
+    oSelectPro.value = oProvince.value
+    oSelectSex.value = oSex.value
+    
+    oSelectPro.onchange = function(){
+    	oProvince.value = oSelectPro.value
+    	console.log(oProvince.value, oSelectPro.value)
+    }
+    oSelectSex.onchange = function(){
+    	oSex.value = oSelectSex.value
+    }
     var data
     var demo_h5_upload_ops = {
             init: function () {

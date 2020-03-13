@@ -18,6 +18,8 @@ public class Users {
 	private String nickname;
 	private int score; // 积分
 	private String avatar;
+	private String sex;
+	private String province;
 	@Transient
 	private String passwordNew;
 	
@@ -64,5 +66,18 @@ public class Users {
 	public void setScore(int score) {
 		this.score = score;
 	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	public String getProvince() {
+		return province;
+	}
+	public void setProvince(String province) {
+		this.province = province;
+	}
+	
 	
 }

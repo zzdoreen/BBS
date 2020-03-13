@@ -127,8 +127,8 @@ body{
 
 	<script>
 	setTimeout(()=>{
-		window.open('moduleList.action','_self')
-	},5000)
+		window.open('chartsList.action','_self')
+	},3000)
 	</script>
 </body>
 </html>

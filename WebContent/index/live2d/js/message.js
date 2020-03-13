@@ -318,12 +318,17 @@ if (!norunFlag) {
 					"info": info_, //text
 				},
 				success: function (res) {
-					if (res.code !== 100000) {
+					if (res.code !== 200000 && res.code !==100000) {
 						talkValTimer();
 						showMessage('似乎有什么错误，请和站长联系！', 0);
 					} else {
 						talkValTimer();
-						showMessage(res.text, 0);
+						if(res.url){
+							showMessage(`<a href='${res.url}'>${res.text}</a>`,0)
+						}else{
+							showMessage(res.text, 0);
+						}
+						
 					}
 					console.log(res);
 					$('#AIuserText').val("");
