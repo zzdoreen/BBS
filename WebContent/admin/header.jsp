@@ -119,7 +119,8 @@
         </c:if>
         <a href="adminEdit.action" class="glyphicon glyphicon-cog list-group-item">
         	修改密码</a>
-        <a href="newsList.action" class="list-group-item">公告管理</a>
+        	<!-- 
+        <a href="newsList.action" class="list-group-item">公告管理</a> -->
         	
         <a href="login.jsp" class="glyphicon glyphicon-paste list-group-item" onClick='if(confirm("确定退出？")==false)return false'>
         	退出登陆</a>

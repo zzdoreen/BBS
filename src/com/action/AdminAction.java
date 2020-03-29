@@ -20,7 +20,6 @@ import com.service.AdminService;
 public class AdminAction extends BaseAction{
 	
 	private Admin admin;
-	
 	private String msg;
 	
 	@Autowired
@@ -41,14 +40,6 @@ public class AdminAction extends BaseAction{
 		}
 		// 将登录用户信息存入session
 		getSession().setAttribute("admin", loginAdmin);
-		/*if(admin.getRole()==1) {
-			return "readmin"; // 重定向到管理首页	
-		}else if(admin.getRole()==2){
-			msg="登陆成功";
-			return "s_admin";
-		}else {
-			return "m_admin";
-		}*/
 		return "readmin";
 		
 	}

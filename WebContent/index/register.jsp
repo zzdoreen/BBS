@@ -65,7 +65,7 @@
 		.right {
 			flex: 1.1;
 			overflow: hidden;
-			background: url('img/register.jpg') no-repeat top;
+			background: url('img/register.jpg') no-repeat 0 60%;
 			background-size: cover;
 		}
 
@@ -74,12 +74,12 @@
 		}
 
 		.filter-box {
-			background: url('img/register.jpg') no-repeat top;
+			background: url('img/register.jpg') no-repeat 0 40%;
 			background-size: cover;
 			width: 100%;
 			height: 100%;
 			z-index: -1;
-			filter: blur(15px)
+			filter: blur(10px)
 		}
 		@keyframes boxin{
 			from{

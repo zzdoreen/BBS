@@ -96,7 +96,9 @@
 			color: white;
 			border: none;
 		}
-
+		.breadcrumb{
+			background: none;
+		}
 	</style>
 </head>
 <script type="text/javascript" src="../ueditor/ueditor.config.js"></script>  
@@ -108,6 +110,14 @@
 <body>
 	<jsp:include page="header.jsp" />
 	<div style="margin-top:50px" class="container">
+		<div id="pt" class="bm cl">
+				<ol class="breadcrumb">
+					<li><a href="index.action">论坛首页</a></li>
+					<li><a href="module.action?module.id=${post.topic.module.id}">${post.topic.module.name}</a></li>
+					<li><a href="topic.action?topic.id=${post.topic.id}">${post.topic.name}</a></li>
+				  </ol>
+			</div>
+			
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				【${post.topic.name}】${post.title}

@@ -69,7 +69,7 @@
 		.right {
 			flex: 1.1;
 			overflow: hidden;
-			background: url('images/login_right.jpg') no-repeat center;
+			background: url('img/login_right.jpg') no-repeat center;
 			background-size: cover;
 		}
 
@@ -78,7 +78,7 @@
 		}
 
 		.filter-box {
-			background: url('images/login_right.jpg') no-repeat center;
+			background: url('img/login_right.jpg') no-repeat center;
 			background-size: cover;
 			width: 100%;
 			height: 100%;

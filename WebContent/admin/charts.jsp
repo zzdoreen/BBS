@@ -182,7 +182,7 @@
                         name: '用户分布',
                         type: 'pie',
                         radius: [30, 100],
-                        center: ['60%', '50%'], // left top
+                        center: ['70%', '50%'], // left top
                         roseType: 'radius',
                         data: userDatas,
                         label: {

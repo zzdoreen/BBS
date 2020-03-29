@@ -40,7 +40,6 @@
 			<table class="post-list am-table am-table-striped am-table-hover table-main">
 				<thead class="row post-head">
 					<th colspan='2'>标题</th>
-					<th colspan='2'>所属话题</th>
 					<th>贴主</th>
 					<th colspan='2'>时间</th>
 					<th>查看数</th>
@@ -52,7 +51,6 @@
 						<td colspan='2'  style='overflow:hidden;max-width:200px' title='${post.title}'>
 							${post.title}
 						</td>
-						<td colspan='2'>【${post.topic.module.name}】<br />${post.topic.name}</td>
 						<td title="${post.user.nickname}">${post.user.nickname}</td>
 						<td colspan='2' title="${post.systime}">${post.systime}</td>
 						<td title="${post.viewCount}">${post.viewCount}</td>

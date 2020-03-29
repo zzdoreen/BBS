@@ -118,7 +118,7 @@
 		<div class="form-group">
 			<label for="select_topic" class="col-sm-3 control-label">所属版块</label>
 			<div class="col-sm-4">
-				<select class="form-control" name="topic.module.id">
+				<select class="form-control" name="module.id">				
 					<c:forEach var="module" items="${moduleList}">
 						<c:if test="${moduleid==module.id}"><option value="${module.id}" selected="selected">${module.name}</option></c:if>
 						<c:if test="${moduleid!=module.id}"><option value="${module.id}">${module.name}</option></c:if>

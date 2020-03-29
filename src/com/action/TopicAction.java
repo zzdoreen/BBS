@@ -40,11 +40,11 @@ public class TopicAction extends BaseAction{
 	@Action("topicList")
 	public String topicList(){
 		if (moduleid > 0) { // 按版块查询
-			topicList = topicService.getListByModuleid(moduleid, page, size);
-			pageHtml = PageUtil.getPageTool(servletRequest, topicService.getTotalByModuleid(moduleid), page, size);
+			topicList = topicService.getListByModuleid(moduleid, page, 5);
+			pageHtml = PageUtil.getPageTool(servletRequest, topicService.getTotalByModuleid(moduleid), page, 5);
 		}else{ // 全部
-			topicList = topicService.getList(page, size);
-			pageHtml = PageUtil.getPageTool(servletRequest, topicService.getTotal(), page,size);
+			topicList = topicService.getList(page, 5);
+			pageHtml = PageUtil.getPageTool(servletRequest, topicService.getTotal(), page,5);
 		}
 		moduleList = moduleService.getList(); // 获取全部
 		return "topicList";

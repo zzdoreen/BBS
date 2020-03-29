@@ -16,7 +16,7 @@ public class Users {
 	private String username;
 	private String password;
 	private String nickname;
-	private int score; // 积分
+	private int score; 
 	private String avatar;
 	private String sex;
 	private String province;

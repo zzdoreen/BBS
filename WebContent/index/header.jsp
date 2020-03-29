@@ -191,8 +191,7 @@ a:hover{
         <div class="live_ico_item type_quit" id="hideButton"></div>
         <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
         <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
-        <input name="live2dBGM" value="https://m10.music.126.net/20191125162450/1779095d54742f1166ab0538097d59b2/yyaac/5158/0008/5559/f2432914627b81b9320bb39cae2c769a.m4a" type="hidden">
-        <input name="live2dBGM" value="https://m10.music.126.net/20191125162605/9c573d687f9fea42962339ae4c8071c0/yyaac/545d/0f0f/070e/c7fb8907598e5ca8e29e0d81abd5e0b5.m4a" type="hidden">
+        <input name="live2dBGM" value="live2d/images/lovingStrangers.mp3" type="hidden">
         <input id="duType" value="douqilai,l2d_caihong" type="hidden">
     </div>
 </div>

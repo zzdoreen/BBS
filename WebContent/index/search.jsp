@@ -84,7 +84,7 @@
 		<input type='search' class='form-control search-content' />
 		<button class='btn btn-primary search-btn'><i class='glyphicon glyphicon-search'></i> &nbsp;&nbsp;搜索</button>
 	</div>
-	<img class='empty' src='images/empty.png' />
+	<img class='empty' src='img/empty.png' />
 	<table class="table table-hover panel panel-default">
 				<thead class='panel-heading'>
 					<td colspan="2">标题</td>

@@ -314,13 +314,12 @@ if (!norunFlag) {
 				dataType:"json",
 				data: {
 					"key":"a0a641c4e0b64735a0e60277b361bf52",//APIKey
-					//"key":"78722a7b5c4247679b8d01dc334934f8",//APIKey
 					"info": info_, //text
 				},
 				success: function (res) {
 					if (res.code !== 200000 && res.code !==100000) {
 						talkValTimer();
-						showMessage('似乎有什么错误，请和站长联系！', 0);
+						showMessage('似乎有什么错误', 0);
 					} else {
 						talkValTimer();
 						if(res.url){
@@ -471,7 +470,6 @@ if (!norunFlag) {
 	}
 	$(document).ready(function () {
 		var AIimgSrc = [
-			//home_Path + message_Path + "model/rem/remu2048/texture_00.png"
 			home_Path + ':' + location.port + message_Path + 'model/rem/remu2048/texture_00.png'
 		]
 		var images = [];
