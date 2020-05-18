@@ -158,7 +158,7 @@ label{
         <video id="video" src="video/test.mp4" loop muted autoplay></video>
     </div>
     <div class="container-form">
-         <form class="form-signin" action="login.action" method="post">
+         <form class="form-signin" action="login.action" method="POST">
             <img src="images/avatar.jpg" class="avatar" alt="">
             <input type="text" name="admin.username"  class="form-control" placeholder="用户" required autofocus>
             <input type="password" name="admin.password" class="form-control" placeholder="密码" required>

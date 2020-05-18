@@ -84,8 +84,17 @@ public class AdminAction extends BaseAction{
 		}
 		return null;
 	}
-
-
+	
+	/**
+	 * 退出
+	 * @return
+	 */
+	@Action("logout")
+	public String logout(){
+		getSession().removeAttribute("loginAdmin"); 
+		return "login";
+	}
+	
 	public Admin getAdmin() {
 		return admin;
 	}

@@ -33,7 +33,7 @@ public class AdminService {
 	 */
 	public Admin get(String username, String password,int role){
 		Admin admin = adminDao.selectByUsername(username);
-		if (admin!=null && admin.getPassword().equals(SafeUtil.encode(password))&& (admin.getRole()==role)) {
+		if (admin!=null && admin.getPassword().equals(SafeUtil.encode(password)) && admin.getRole()==role) {
 			return admin;
 		}
 		return null;

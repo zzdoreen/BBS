@@ -81,7 +81,8 @@
 		.Form .formTitle{
 			height: 100px;
 			line-height: 100px;
-			background:url('images/formBg.jpg') 0% 52%;
+			background:url('images/formBg.jpeg') 10% 80%;
+			background-size: cover;
 			border-radius: 15px 15px 0 0;
 			margin-bottom: 30px;
 			color: white;
@@ -122,7 +123,7 @@
         	<!-- 
         <a href="newsList.action" class="list-group-item">公告管理</a> -->
         	
-        <a href="login.jsp" class="glyphicon glyphicon-paste list-group-item" onClick='if(confirm("确定退出？")==false)return false'>
+        <a href="logout.action" class="glyphicon glyphicon-paste list-group-item" onClick='if(confirm("确定退出？")==false)return false'>
         	退出登陆</a>
     </div>
 </body>

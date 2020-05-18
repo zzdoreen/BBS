@@ -13,6 +13,9 @@
 		max-height: 60px;
 		overflow: hidden;
 	}
+	.replyList .rContent{
+		max-width:700px;
+	}
 	.replyList td p {
 		max-height: 30px;
 		overflow: hidden;
@@ -61,7 +64,7 @@
 
 				<c:forEach var="reply" items="${replyList}">
 					<tr class='replyList'>
-						<td>${reply.content}</td>
+						<td class='rContent'>${reply.content}</td>
 						<td>
 							<p>${reply.systimes}</p>
 						</td>

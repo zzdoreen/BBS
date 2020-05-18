@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- 自动跳转到后台登录页 -->
 <meta http-equiv="refresh" content="0;url=admin/login.jsp">
 </head>
 <body>
