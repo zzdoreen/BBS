@@ -160,10 +160,10 @@ if (!norunFlag) {
 	function showHitokoto() {
 		if (sessionStorage.getItem("Sleepy") !== "1") {
 			if (!AITalkFlag) {
-				$.getJSON('https://sslapi.hitokoto.cn/', function (result) {
+				/*$.getJSON('https://sslapi.hitokoto.cn/', function (result) {
 					talkValTimer();
 					showMessage(result.hitokoto, 0);
-				});
+				});*/
 			}
 		} else {
 			hideMessage(0);
@@ -470,7 +470,7 @@ if (!norunFlag) {
 	}
 	$(document).ready(function () {
 		var AIimgSrc = [
-			home_Path + ':' + location.port + message_Path + 'model/rem/remu2048/texture_00.png'
+			'http://localhost:8080/ssh_bbs/index/live2d/model/rem/remu2048/texture_00.png'
 		]
 		var images = [];
 		var imgLength = AIimgSrc.length;
@@ -492,7 +492,7 @@ if (!norunFlag) {
 						}, 1300);
 					}
 					setTimeout(function () {
-						loadlive2d("live2d", message_Path + "model/rem/rem.json");
+						loadlive2d("live2d", "http://localhost:8080/ssh_bbs/index/live2d/model/rem/rem.json");
 					}, 1000);
 					initLive2d();
 					images = null;
